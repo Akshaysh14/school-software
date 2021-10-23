@@ -1,0 +1,22 @@
+<div style="background-color: rgb(228, 228, 228);">
+    <div class="container col-md-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card px-5">
+            <div class="row">
+                <form class="p-5">
+                    <h1 class="text-center mb-3">Login</h1>
+                    <div class="mb-3">
+                        <label for="emailId" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="emailId" name="email" [(ngModel)]="data.email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            [(ngModel)]="data.password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 mb-3" (click)="login()">Login</button>
+                    <p>Don't have an account? <a routerLink='/register'>Register</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
