@@ -1,0 +1,19 @@
+<div style="background-color: rgb(228, 228, 228);">
+    <div class="container col-md-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card px-5">
+            <div class="row">
+                <form class="p-5">
+                    <h1 class="text-center mb-3">Todo List</h1>
+                    <div class="d-flex justify-content-around">
+                        <input type="text" class="form-control" id="todo" name="todo" [(ngModel)]="data.task">
+                        <button type="submit" class="btn btn-primary" (click)="addTodo()">Add</button>
+                    </div>
+                </form>
+                <ul class="list-group pb-5" *ngIf="getTodo$ | async as getTodo">
+                    <li class="list-group-item" *ngFor="let todo of getTodo.results; let i = index">{{i+1}}. |
+                        {{todo.task}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

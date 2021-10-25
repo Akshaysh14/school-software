@@ -8,12 +8,14 @@ import { LoginComponent } from './Auth/login/login.component';
 import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
