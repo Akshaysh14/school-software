@@ -9,13 +9,15 @@ import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { PaginationComponent } from './home/dashboard/pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
