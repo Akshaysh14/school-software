@@ -1,7 +1,8 @@
 import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TodoService } from 'src/app/services/todo.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { Todo, TodoApiResponse, TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +11,9 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router: Router, private todoService: TodoService) { }
+  constructor(private router: Router, private todoService: TodoService, private authService: AuthService) { }
 
-  ngOnInit(): void {
-    this.getTodo$;
-  }
+  ngOnInit(): void { }
 
   data = {
     task: '',
@@ -32,6 +31,15 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  getTodo$ = this.todoService.getTodo$;
+  save(checked: boolean, todo: Todo) {
+    todo.completed = checked;
+    this.todoService.patchTodo(todo);
+  }
+
+  getTodo$ = this.todoService.todo$;
+
+  renewAccess() {
+    this.authService.renewAccessToken().subscribe();
+  }
 
 }

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.data).subscribe((next: any) => {
       localStorage.setItem('access', next.access)
-      localStorage.setItem('refresh ', next.refresh)
+      localStorage.setItem('refresh', next.refresh)
       this.router.navigate(['/dashboard']);
     });
   }
